@@ -9,11 +9,16 @@
 
         <div id="root" class="container">
 
-           <coupon @applied="onCouponApplied"></coupon> 
+            <modal>
+                <template slot="header">My Title</template>
 
-           <h1 v-if="couponApplied">You used a coupon!</h1>
-        
-           
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In ullam molestias dolore praesentium nihil nesciunt exercitationem odio, tempore ipsa provident doloremque quae, consequatur quod placeat adipisci unde facere ea quo!
+
+                <template slot="footer">
+                    <a class="button is-primary">Save changes</a>
+                    <a class="button">Cancel</a>
+                </template>
+            </modal>  
         
         </div>
 
