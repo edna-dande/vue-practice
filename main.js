@@ -1,38 +1,8 @@
-Vue.component('modal', {
+Vue.component('progress-view', {
      
-    template:`
-    <div class="modal is-active">
-  <div class="modal-background"></div>
-
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">
-      
-      <slot name="header"></slot>
-      </p>
-
-      <button class="delete"></button>
-    </header>
-
-    <section class="modal-card-body">
-    <slot></slot>
-    </section>
-
-    <footer class="modal-card-foot">
-    <slot name="footer">
-    <a class="button is-primary">Okay</a>
-    </slot>
-    </footer>
-  </div>
-</div>
-    `,
-    
-    methods:{
-        onCouponApplied() {
-            Event.fire('applied');
-        
-        }
-       }
+   data() {
+    return { completionRate: 50};
+   }
 
 });
 
@@ -41,14 +11,5 @@ Vue.component('modal', {
 new Vue({
     el: '#root',
 
-    data: {
-        couponApplied: false
-    },
-
-    created(){
-        Event.listen('applied', () => alert('Handling it!'))
-
-
-       }
     
 });
